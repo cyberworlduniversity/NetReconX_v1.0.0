@@ -227,3 +227,48 @@ MIT License — Free to use, modify, and distribute for ethical purposes.
 ---
 
 *NetReconX v1.0.0 · Built for ethical security professionals · Stay legal. Stay ethical. 🛡️*
+
+
+## Repository Quick Start
+
+Clone the canonical repository:
+
+```bash
+git clone https://github.com/cyberworlduniversity/NetReconX_v1.0.0.git
+cd NetReconX_v1.0.0
+```
+
+### Requirements
+
+- Python 3.8+; install Nmap separately for full-mode OS fingerprinting
+
+### Install dependencies / compile
+
+```bash
+python -m pip install requests python-nmap colorama tabulate dnspython
+python netreconx.py --target example.com
+```
+
+### Run
+
+```bash
+Start with a target you control and a narrow port range, e.g. --ports 80,443. Use --help to review available options.
+```
+
+Use the examples and options documented above; run a small, authorized test first. A dedicated automated test suite is not currently documented in this repository, so do not interpret a successful compile as proof of runtime correctness.
+
+Authorized reconnaissance only. Respect bug-bounty scope and rate limits; do not scan third-party targets without permission.
+
+### Program flow
+
+```mermaid
+flowchart TD
+    A[Start] --> B[Check prerequisites]
+    B --> C{Build and input valid?}
+    C -- No --> D[Report error and stop]
+    C -- Yes --> E[Execute NetReconX v1 0 0 task]
+    E --> F[Generate output or findings]
+    F --> G[Review results]
+    G --> H[Exit]
+    D --> H
+```
