@@ -1,4 +1,14 @@
 # ⬡ NetReconX v1.0.0
+
+
+## Get this repository
+
+Clone the current project (this repository's canonical GitHub URL), then follow the installation and usage steps below.
+
+```bash
+git clone https://github.com/cyberworlduniversity/NetReconX_v1.0.0.git
+cd NetReconX_v1.0.0
+```
 ### Network Reconnaissance Engine — Ethical Penetration Testing Tool
 
 ```
