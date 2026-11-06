@@ -400,7 +400,7 @@ class HTTPAuditor:
 
         try:
             print_info(f"Fetching headers from {url}")
-            r = requests.get(url, timeout=8, verify=False, allow_redirects=True,
+            r = requests.get(url, timeout=8, allow_redirects=True,
                              headers={"User-Agent": "NetReconX/1.0 (Security Scanner)"})
 
             self.results["status_code"] = r.status_code
