@@ -24,9 +24,4 @@ jobs:
       - name: Compile Python sources
         run: python -m compileall -q .
       - name: Run unit tests when present
-        run: |
-          if find . -type f \( -name 'test_*.py' -o -name '*_test.py' \) | grep -q .; then
-            python -m unittest discover -v
-          else
-            echo "No unit tests are present yet; syntax validation passed."
-          fi
+        run: python -m unittest discover -v || test "$?" -eq 5
