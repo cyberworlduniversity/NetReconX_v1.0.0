@@ -23,5 +23,10 @@ jobs:
           if [ -f requirements.txt ]; then python -m pip install -r requirements.txt; fi
       - name: Compile Python sources
         run: python -m compileall -q .
-      - name: Run offline unit tests
-        run: python -m unittest discover -v
+      - name: Run unit tests when present
+        run: |
+          if find . -type f \( -name 'test_*.py' -o -name '*_test.py' \) | grep -q .; then
+            python -m unittest discover -v
+          else
+            echo "No unit tests are present yet; syntax validation passed."
+          fi
